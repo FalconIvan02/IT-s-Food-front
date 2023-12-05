@@ -26,7 +26,7 @@ export const ProductsContextProvider = ({ children }) => {
     try {
       setError(null);
       setIsLoading(true);
-      const response = await fetch("http://localhost:3000/foods");
+      const response = await fetch("http://localhost:3000");
       const data = await response.json();
       setProducts(data);
     } catch (err) {
