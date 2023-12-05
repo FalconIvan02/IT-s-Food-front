@@ -6,36 +6,56 @@ export const ProductsContext = createContext({});
 
 // Crear el proveedor de contexto de productos
 export const ProductsContextProvider = ({ children }) => {
-    //! Variables de estado para los productos, la carga y el error
-    const [data, setProducts] = useState({});
-    const [isLoading, setIsLoading] = useState(true);
-    const [isError, setError] = useState(null);
+  //! Variables de estado para los productos, la carga y el error
+  const [typeName, setTypeName] = useState("");
+  const [data, setProducts] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setError] = useState(null);
+  const typeUrl = `http://localhost:3000/foods?type=${typeName}`;
 
-    //! Función para obtener los datos de los productos
-    const fetchData = async () => {
-        try {
-            setError(null);
-            setIsLoading(true);
-            const response = await fetch("https://api.npoint.io/f98528e04478862228d2");
-            const data = await response.json();
-            setProducts(data);
-        } catch (err) {
-            console.error(err);
-            setError(err.message);
-        } finally {
-            setIsLoading(false);
-        }
-    };
+  const [apiUrl, setApiUrl] = useState([]);
 
-    // Efecto para inicializar el contexto
-    useEffect(() => {
-        setTimeout(() => {
-            fetchData();
-        }, 10500);
-    }, []);
+  console.log(apiUrl);
+  useEffect(() => {
+    fetch(typeUrl)
+      .then((res) => res.json())
+      .then((data) => setApiUrl(data));
+  }, [typeName]);
 
-    // Devolver el proveedor de contexto
-    const contextValues = { data, isLoading, isError };
+  const fetchData = async () => {
+    try {
+      setError(null);
+      setIsLoading(true);
+      const response = await fetch("http://localhost:3000/foods");
+      const data = await response.json();
+      setProducts(data);
+    } catch (err) {
+      console.error(err);
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
-    return <ProductsContext.Provider value={contextValues}>{children}</ProductsContext.Provider>;
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  // Devolver el proveedor de contexto
+  const contextValues = {
+    data,
+    isLoading,
+    isError,
+    typeName,
+    setTypeName,
+
+    apiUrl,
+    setApiUrl,
+  };
+
+  return (
+    <ProductsContext.Provider value={contextValues}>
+      {children}
+    </ProductsContext.Provider>
+  );
 };
