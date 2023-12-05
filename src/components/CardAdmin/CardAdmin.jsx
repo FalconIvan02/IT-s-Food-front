@@ -1,6 +1,5 @@
-import '../CardNexo/CardNexo.css'
-import '../../assets/styles/CardMenu.css'
 import { useEffect, useState } from 'react'
+import './CardAdmin.css'
 
 function CardAdmin() {
     const [data, setData] = useState(null)
@@ -14,7 +13,7 @@ function CardAdmin() {
     }, [])
 
     function Delete(e) {
-        if (window.confirm('Estas seguro de querer borrar esta comida?')) {
+        if (window.confirm('Estas seguro de que quieres borrar este producto?')) {
             if (e.target.matches('button')) {
                 const article = e.target.closest('article')
                 const id = article.dataset.id
@@ -29,16 +28,16 @@ function CardAdmin() {
             }
         }
     }
+
     return (
         <>
             {data?.map((food) => (
-                <article className="containerCarta" data-id={food.id} key={food.id}>
+                <article key={food.id} data-id={food.id} className="containerCarta">
                     <div className="rectangleImg">
                         <img className="menu--image" src={food.image} alt={food.title} />
                     </div>
                     <div className="textCardMenu">
                         <div className="textMenu">
-                            <span className="textCardMenu__its">IT'S</span>
                             <h3 className="textCardMenu__title">{food.title}</h3>
                         </div>
                     </div>

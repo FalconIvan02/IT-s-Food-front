@@ -1,0 +1,37 @@
+.edit-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    z-index: 1000;
+}
+
+.edit-form h2 {
+    margin-bottom: 10px;
+}
+
+.edit-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-form label {
+    margin-bottom: 10px;
+}
+
+.edit-form input {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.edit-form button {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.edit-form button:not(:last-child) {
+    margin-right: 10px;
+}
