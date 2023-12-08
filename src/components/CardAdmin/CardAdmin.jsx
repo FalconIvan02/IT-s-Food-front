@@ -42,7 +42,6 @@ function CardAdmin() {
     }
 
     function handleAddSubmit(newFood) {
-        console.log(newFood)
         fetch('http://localhost:3000/foods', {
             method: 'POST',
             headers: {
@@ -111,10 +110,7 @@ function CardAdmin() {
 
             {isAdding && <AddForm onCancel={() => setIsAdding(false)} onSubmit={handleAddSubmit} />}
 
-            <div className="containerCarta clickable" onClick={handleAdd}>
-                <div className="rectangleImg">
-                    <div className="menu--image add-icon">+</div>
-                </div>
+            <div className="textCardMenuAdmin" onClick={handleAdd}>
                 <div className="textCardMenu">
                     <div className="textMenu">
                         <h3 className="textCardMenu__title">Agregar Nuevo Producto</h3>
@@ -128,7 +124,7 @@ function CardAdmin() {
 function UpdateForm({ updatedFood, onCancel, onSubmit }) {
     const [updatedTitle, setUpdatedTitle] = useState(updatedFood.title)
     const [updatedImage, setUpdatedImage] = useState(updatedFood.image)
-    const [updatedPrice, setUpdatedPrice] = useState(updatedFood.price) // Added Price state
+    const [updatedPrice, setUpdatedPrice] = useState(updatedFood.price)
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -137,7 +133,7 @@ function UpdateForm({ updatedFood, onCancel, onSubmit }) {
             id: updatedFood.id,
             title: updatedTitle,
             image: updatedImage,
-            price: updatedPrice // Include the Price field
+            price: parseFloat(updatedPrice)
         }
 
         onSubmit(updatedFoodData)
@@ -159,7 +155,6 @@ function UpdateForm({ updatedFood, onCancel, onSubmit }) {
                     Price:
                     <input type="text" value={updatedPrice} onChange={(e) => setUpdatedPrice(e.target.value)} />
                 </label>
-                {/* Add other form fields as needed */}
                 <button type="button" onClick={onCancel}>
                     Cancelar
                 </button>
