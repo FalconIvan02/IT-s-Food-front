@@ -69,4 +69,7 @@ input {
     margin-bottom: 10px;
 }
 
+.textCardMenuAdmin:hover {
+    cursor: pointer;
+}
 /* Add more styles as needed */
