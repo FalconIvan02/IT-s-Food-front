@@ -92,7 +92,7 @@ function CardAdmin() {
                         </div>
                     </div>
 
-                    <button onClick={Delete}>Eliminar</button>
+                    <button className="buttonDelete" onClick={Delete}>Eliminar</button>
                     <button onClick={() => handleUpdate(food.id)}>Actualizar</button>
                 </article>
             ))}
