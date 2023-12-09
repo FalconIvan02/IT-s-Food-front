@@ -19,7 +19,7 @@ export const ProductsContextProvider = ({ children }) => {
         fetch(typeUrl)
             .then((res) => res.json())
             .then((data) => setApiUrl(data))
-    }, [typeName])
+    }, [typeUrl])
 
     const fetchData = async () => {
         try {
