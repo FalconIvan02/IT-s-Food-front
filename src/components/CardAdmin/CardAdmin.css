@@ -47,9 +47,14 @@ button {
     border-color: rgb(212, 22, 22);
 }
 
+.buttonDelete:hover{
+    background-color: rgb(212, 22, 22);
+    filter: brightness(80%);
+}
 button:hover {
     background-color: #cc6f05;
-    filter: brightness(80%);}
+    filter: brightness(80%);
+}
 
 .update-form {
     position: fixed;

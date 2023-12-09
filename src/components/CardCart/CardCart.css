@@ -1,13 +1,26 @@
-.rectangleImg{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgb(224, 224, 224) ;
-    padding: 20px;
-    border: 2px solid #cc6f05;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-family: 'Arial Black', Helvetica;
-    font-size: 16px;
+.CardCart-Container {
+    
+}
+
+.rectangleImg {
+   
+}
+
+.Cart--image {}
+    
+
+.Cart-firstName{
+
+
+}
+.Cart-secondName{
+
+}
+.Cart-price {
+   
+}
+
+.Cart-quantity {
+
+
 }
