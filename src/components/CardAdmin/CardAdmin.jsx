@@ -187,7 +187,7 @@ function AddForm({ onCancel, onSubmit }) {
     }
 
     return (
-        <div className="update-form">
+        <div className="add-form">
             <h2>Agregar Nuevo Producto</h2>
             <form onSubmit={handleSubmit}>
                 <label>
@@ -243,7 +243,7 @@ function AddForm({ onCancel, onSubmit }) {
                         </label>
                     </div>
                 </label>
-                <label>
+                <label className='textDescription'>
                     Description:
                     <textarea value={newDescription} onChange={(e) => setNewDescription(e.target.value)}></textarea>
                 </label>

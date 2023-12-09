@@ -51,6 +51,7 @@ button {
     background-color: rgb(212, 22, 22);
     filter: brightness(80%);
 }
+
 button:hover {
     background-color: #cc6f05;
     filter: brightness(80%);
@@ -68,12 +69,28 @@ button:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     font-family: 'Arial Black', Helvetica;
     font-size: 16px;
-    
+}
+
+.add-form{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(224, 224, 224);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
 }
 
 label {
     display: block;
-    margin-bottom: 10px;
+}
+
+.textDescription{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 input {

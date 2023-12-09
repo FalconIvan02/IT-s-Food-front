@@ -1,26 +1,36 @@
 .CardCart-Container {
-    
+   margin: 10px;
+   padding: 10px;
 }
+
 
 .rectangleImg {
-   
+   margin:10px;
+   padding: 10px;
 }
 
-.Cart--image {}
+.Cart--image {
+    margin: 10px;
+    padding: 10px;
+}
     
 
 .Cart-firstName{
-
+    margin: 10px;
+    padding: 10px;
 
 }
 .Cart-secondName{
-
+    margin: 10px;
+    padding: 10px;
 }
 .Cart-price {
-   
+   margin: 10px;
+   padding:10px;
 }
 
 .Cart-quantity {
-
+    margin: 10px;
+    padding: 10px;
 
 }
